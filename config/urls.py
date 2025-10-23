@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sprint.views import my_sprint
 
 urlpatterns = [
+    path('', my_sprint, name='my_sprint'),
     path('admin/', admin.site.urls),
 ]
