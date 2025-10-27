@@ -6,7 +6,7 @@ STATUS = ((0, 'To Do'), (1, 'In Progress'), (2, 'Done'))
 
 # Create your models here.
 class Task(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, unique=True)
     description = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
