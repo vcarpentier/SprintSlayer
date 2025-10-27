@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import my_sprint
+from .views import PostList
 
 urlpatterns = [
-    path('', my_sprint, name='my_sprint'),  
+    path('', PostList.as_view(), name='PostList'),  
 ]

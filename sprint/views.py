@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Task
 # Create your views here.
 
-def my_sprint(request):
-    return HttpResponse("Welcome to the Sprint app!")
+
+class PostList(generic.ListView):
+    model = Task
+    # queryset = Task.objects.all()
