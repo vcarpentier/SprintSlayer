@@ -5,5 +5,5 @@ from .models import Task
 
 
 class PostList(generic.ListView):
-    model = Task
-    # queryset = Task.objects.all()
+    queryset = Task.objects.all()
+    template_name = 'task_list.html'
