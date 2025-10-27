@@ -6,4 +6,4 @@ from .models import Task
 
 class TaskList(generic.ListView):
     queryset = Task.objects.all()
-    template_name = 'task_list.html'
+    template_name = 'sprint/index.html'
