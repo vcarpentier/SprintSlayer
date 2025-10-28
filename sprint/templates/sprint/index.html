@@ -16,10 +16,10 @@
             <div class="card">
                 <div class="card-header"> <a href="{% url 'task_detail' task.slug %}" class="post-link">{{ task.title }} </a></div>
                 <div class="card-body">
-                    <p class="card-text">{{ task.type }}</p>
                     <p class="card-text text-muted h6"> Assigned to : {{ task.assigned_to}}
                         Due Date : {{ task.due_date }}
                     </p>
+                    <p class="card-text">{{ task.type }}</p>
                 </div>
             </div>
             {% endif %}

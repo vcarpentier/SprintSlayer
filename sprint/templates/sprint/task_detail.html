@@ -21,8 +21,12 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    {{ task.content | safe }}
+                    {{ task.description | safe }}
                 </p>
+                <p class="card-text"> {{task.statuc}} </p>
+                <p class="card-text"> Assigned to : {{ task.assigned_to}} </p>
+                <p class="card-text"> Due Date : {{ task.due_date }} </p>
+                <p class="card-text"> Type : {{task.type}}</p>
             </div>
         </div>
     </div>
