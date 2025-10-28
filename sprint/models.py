@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 TASKTYPE = ((0, 'Feature'), (1, 'Bug'), (2, 'refactor'))
-STATUS = ((0, 'To Do'), (1, 'In Progress'), (2, 'Done'))
+# not startd, in progress, completed, in backlog
+STATUS = ((0, 'Ready for Battle'), (1, 'Fight'), (2, 'Victory'), (3, 'Camp'))
 
 # Create your models here.
 class Task(models.Model):
@@ -12,6 +13,7 @@ class Task(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     assigned_to = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assigned_tasks', null=True, blank=True)
+    due_date = models.DateField(null=True, blank=True)
     type = models.IntegerField(choices=TASKTYPE, default=0)
 
     def __str__(self):

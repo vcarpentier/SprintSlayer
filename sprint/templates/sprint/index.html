@@ -8,78 +8,73 @@
 
         <!-- Tasks list for this specific sprint -->
         <div class="col">
-            <h2>Not Started</h2>
+            <h2>Ready for Battle</h2>
             {% for task in task_list %}
-            
-                <!-- Filter the To Do tasks-->
-                {% if task.status == 0 %}
-                    <div class="card mb-4">
-                        <h5 class="card-header status-header">{{ task.title }}</h5>
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div>
-                                    <p class="author">{{ task.description }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ task.title }}</h2>
-                            </a>
-                            <p class="card-text text-muted h6">{{ task.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                {% endif %}
-        
-            {% endfor %}
-        </div>
-        <div class="col">
-            <h2>In Progress</h2>
-             {% for task in task_list %}
-                <!-- Filter the In Progress tasks -->
-                {% if task.status == 1 %}
-                    <div class="card mb-4">
-                        <h5 class="card-header status-header">{{ task.title }}</h5>
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div>
-                                    <p class="author">{{ task.description }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ task.title }}</h2>
-                            </a>
-                            <p class="card-text text-muted h6">{{ task.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div class="col">
-            <h2>Done</h2>
-             {% for task in task_list %}
-                <!-- Filter the In Progress tasks -->
-                {% if task.status == 2 %}
-                    <div class="card mb-4">
-                        <h5 class="card-header status-header">{{ task.title }}</h5>
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div>
-                                    <p class="author">{{ task.description }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ task.title }}</h2>
-                            </a>
-                            <p class="card-text text-muted h6">{{ task.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
 
+            <!-- Filter the To Do tasks-->
+            {% if task.status == 0 %}
+            <div class="card">
+                <div class="card-header">{{ task.title }} </div>
+                <div class="card-body">
+                    <a href="#" class="post-link">
+                        <p class="card-text">{{ task.description }}</p>
+                    </a>
+                    <p class="card-text text-muted h6"> Assigned to : {{ task.assigned_to}}
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+
+        {% endfor %}
     </div>
+    <div class="col">
+        <h2>Fight</h2>
+        {% for task in task_list %}
+        <!-- Filter the In Progress tasks -->
+        {% if task.status == 1 %}
+        <div class="card mb-3">
+            <h5 class="card-header status-header">{{ task.title }}</h5>
+            <div class="card-body">
+                <div class="image-container">
+                    <div>
+                        <p class="author">{{ task.description }}</p>
+                    </div>
+                </div>
+                <a href="#" class="post-link">
+                    <h2 class="card-title">{{ task.title }}</h2>
+                </a>
+                <p class="card-text text-muted h6">{{ task.created_on}}
+                </p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col">
+        <h2>Victory</h2>
+        {% for task in task_list %}
+        <!-- Filter the In Progress tasks -->
+        {% if task.status == 2 %}
+        <div class="card mb-3">
+            <h5 class="card-header status-header">{{ task.title }}</h5>
+            <div class="card-body">
+                <div class="image-container">
+                    <div>
+                        <p class="author">{{ task.description }}</p>
+                    </div>
+                </div>
+                <a href="#" class="post-link">
+                    <h2 class="card-title">{{ task.title }}</h2>
+                </a>
+                <p class="card-text text-muted h6">{{ task.created_on}}
+                </p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</div>
 </div>
 {% if is_paginated %}
 <nav aria-label="Page navigation">

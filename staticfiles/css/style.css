@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: lightgray;
 }
 
 .brand {
@@ -29,9 +29,11 @@ body {
     background-color: #F9FAFC;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
+#bootstrap-overrides .card {
+    border: 10px;
+    border-color: #ff00ff;
+    background-color: #ff00ff;
+    margin-bottom: 20px;
 }
 
 .image-container {
@@ -157,4 +159,4 @@ body {
 }
 
 .approval {
-    color: rgb(222, 146, 168);
+    color: rgb(222, 146, 168)};
