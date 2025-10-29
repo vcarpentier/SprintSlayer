@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from .models import Task
 
 
-class TaskList(generic.ListView):
+class TaskList(PermissionRequiredMixin, generic.ListView):
+    permission_required = 'sprint.view_task'
     queryset = Task.objects.all()
     template_name = 'sprint/index.html'
 
